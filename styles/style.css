@@ -1,0 +1,995 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: --Poppins-Black;
+  src: url(../fonts/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: --Poppins-Regular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+section {
+  padding: 50px 10px;
+}
+
+body {
+  color: #444444;
+  font-size: 0.8rem;
+  font-family: --Poppins-Regular;
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  width: 750px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.title h2 {
+  font-size: 2rem;
+  font-family: --Poppins-Black;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: .5rem;
+}
+
+.title .border {
+  height: 3px;
+  width: 4rem;
+  background: #c33f47;
+  margin: .2rem auto;
+  border-radius: .4rem;
+}
+
+.title p {
+  padding-top: .5rem;
+}
+
+.btn {
+  padding: .8rem 2rem;
+  color: #ffffff;
+  font-family: --Poppins-Regular;
+  text-transform: uppercase;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: .4rem;
+  background: #c33f47;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: #444444;
+}
+
+p {
+  line-height: 1.8;
+}
+
+h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.menuImg {
+  padding: 1.5rem 1.5rem;
+  background: url(../img/menu_40px.png);
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  display: none;
+}
+
+.closeImg {
+  padding: 1.5rem 1.5rem;
+  background: url(../img/multiply_40px.png);
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 10000;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.header .headerContent {
+  width: 100%;
+}
+
+.header .headerContent .container {
+  padding: 1rem 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .headerContent .container .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .1rem;
+}
+
+.header .headerContent .container .logo h2 {
+  color: #444444;
+  font-size: 1.5rem;
+  font-family: --Poppins-Black;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header .headerContent .container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+}
+
+.header .headerContent .container .navbar .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.header .headerContent .container .navbar .nav li a {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #444444;
+  position: relative;
+}
+
+.header .headerContent .container .navbar .nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0%;
+  height: 2px;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  background: #c33f47;
+}
+
+.header .headerContent .container .navbar .nav li a:hover, .header .headerContent .container .navbar .nav li a.active {
+  color: #c33f47;
+}
+
+.header .headerContent .container .navbar .nav li a:hover::after, .header .headerContent .container .navbar .nav li a.active::after {
+  width: 70%;
+}
+
+.home {
+  height: 90vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url(../img/bg.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+.home .container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .container .containerBox {
+  width: 600px;
+  max-width: 100%;
+}
+
+.home .container .containerBox h3 {
+  color: #ffffff;
+}
+
+.home .container .containerBox .border {
+  height: 3px;
+  width: 4rem;
+  background: #ffffff;
+  margin: .5rem 0;
+  border-radius: .4rem;
+}
+
+.home .container .containerBox h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  font-family: --Poppins-Black;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: .5rem;
+}
+
+.home .container .containerBox p {
+  color: #ffffff;
+}
+
+.home .container .containerBox .buttons {
+  margin-top: 1.3rem;
+}
+
+.values {
+  padding: 0 10px;
+}
+
+.values .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: -3rem;
+}
+
+.values .container .containerBox .box {
+  padding: 2rem 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  -ms-flex-item-align: normal;
+      align-self: normal;
+  background: #ffffff;
+  border-top: 3px solid #c33f47;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 1rem;
+}
+
+.about .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 2rem;
+}
+
+.about .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 35rem;
+          flex: 1 1 35rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+}
+
+.about .container .containerBox .box .imgBox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: .4rem;
+}
+
+.about .container .containerBox .box .imgBox .aboutImg {
+  width: 100%;
+  height: 100%;
+}
+
+.about .container .containerBox .box .textBox .border {
+  height: 3px;
+  width: 4rem;
+  background: #c33f47;
+  margin: .5rem 0;
+  border-radius: .4rem;
+}
+
+.about .container .containerBox .box .textBox h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.about .container .containerBox .box .textBox .content {
+  padding-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.about .container .containerBox .box .textBox .content .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.about .container .containerBox .box .textBox .content .box img {
+  border: 2px solid #c33f47;
+  padding: .5rem .5rem;
+  border-radius: 50%;
+}
+
+.counter {
+  background: #c33f4851;
+}
+
+.counter .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.counter .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+  background: #ffffff;
+  border-radius: .4rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.counter .container .containerBox .box .counterImg {
+  padding: .5rem .5rem;
+  background: #c33f47;
+  border-radius: 50%;
+  margin-bottom: .5rem;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.counter .container .containerBox .box h2 {
+  font-size: 2rem;
+}
+
+.services .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.services .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+  border-radius: .4rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  position: relative;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.services .container .containerBox .box::before {
+  position: absolute;
+  content: '';
+  left: -8px;
+  top: -8px;
+  height: 100%;
+  width: 0;
+  background: #c33f4851;
+  border-radius: 5px;
+  -webkit-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+}
+
+.services .container .containerBox .box:hover h3, .services .container .containerBox .box:hover p {
+  color: #ffffff;
+}
+
+.services .container .containerBox .box:hover::before {
+  width: 100%;
+}
+
+.services .container .containerBox .box .serviceImg {
+  padding: .5rem .5rem;
+  border-radius: 50%;
+  background: #c33f47;
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.services .container .containerBox .box h3 {
+  padding-bottom: .5rem;
+}
+
+.appointment {
+  background: #c33f4851;
+}
+
+.appointment .container .containerBox .form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.appointment .container .containerBox .form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.appointment .container .containerBox .form .inputBox .textBox {
+  width: 100%;
+  padding: .8rem 1rem;
+  outline: none;
+  border: 2px solid transparent;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  border-radius: .4rem;
+  font-family: --Poppins-Regular;
+  font-size: 0.8rem;
+  color: #444444;
+  font-weight: 400;
+}
+
+.appointment .container .containerBox .form .inputBox .textBox:hover, .appointment .container .containerBox .form .inputBox .textBox:focus {
+  border: 2px solid #c33f47;
+}
+
+.appointment .container .containerBox .form .inputBox .message {
+  resize: none;
+  height: 130px;
+}
+
+.lawyers {
+  position: relative;
+}
+
+.lawyers .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.lawyers .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: .4rem;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.lawyers .container .containerBox .box .imgBox {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  z-index: 0;
+  background: #ffffff;
+}
+
+.lawyers .container .containerBox .box .imgBox .sci {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background: #c33f4851;
+  padding: 1.5rem 1.5rem;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  opacity: 0;
+}
+
+.lawyers .container .containerBox .box .imgBox .sci .scImg {
+  padding: .5rem .5rem;
+  border-radius: 50%;
+  border: 2px solid #c33f4851;
+  cursor: pointer;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+}
+
+.lawyers .container .containerBox .box .imgBox .sci .scImg:hover {
+  background: #c33f47;
+}
+
+.lawyers .container .containerBox .box .imgBox .lawyerImg {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.lawyers .container .containerBox .box .textBox {
+  text-align: center;
+  padding: 1rem 1rem;
+}
+
+.lawyers .container .containerBox .box .textBox .border {
+  height: 3px;
+  width: 4rem;
+  background: #c33f47;
+  margin: .2rem auto;
+  border-radius: .4rem;
+}
+
+.lawyers .container .containerBox .box:hover .imgBox .sci {
+  bottom: 0;
+  opacity: 1;
+}
+
+.reviews .container .containerBox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reviews .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+  width: 332px;
+  padding: 2rem 2rem;
+  border-radius: .4rem;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.reviews .container .containerBox .box .ratings {
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: .2rem;
+}
+
+.reviews .container .containerBox .box .textBox {
+  border: none;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.reviews .container .containerBox .box .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: .5rem;
+}
+
+.reviews .container .containerBox .box .details .imgBox {
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.reviews .container .containerBox .box .details .imgBox .reviewImg {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contact .container .title {
+  margin: 0 auto;
+}
+
+.mapBox {
+  padding: 14rem 0;
+  background: url(../img/staticmap.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.details .container .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.details .container .containerBox .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 35rem;
+          flex: 1 1 35rem;
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+}
+
+.details .container .containerBox .box:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+}
+
+.details .container .containerBox .box .textBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details .container .containerBox .box .textBox .infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.details .container .containerBox .box .textBox .infoBox .infoImg {
+  padding: .5rem .5rem;
+  border-radius: 50%;
+  background: #c33f4851;
+}
+
+.details .container .containerBox .box .textBox .sci {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.details .container .containerBox .box .textBox .sci .scImg {
+  padding: .5rem .5rem;
+  border-radius: 50%;
+  background: #c33f47;
+  cursor: pointer;
+}
+
+.details .container .containerBox .box .textBox .sci .scImg:hover {
+  background: #c33f4851;
+}
+
+.details .container .containerBox .box .contactForm .form {
+  width: 100%;
+}
+
+.details .container .containerBox .box .contactForm .form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.details .container .containerBox .box .contactForm .form .textBox {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 2px solid #ced4da;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  font-family: --Poppins-Regular;
+  color: #444444;
+  outline: none;
+  border-radius: .4rem;
+  margin-bottom: 1rem;
+}
+
+.details .container .containerBox .box .contactForm .form .textBox:hover, .details .container .containerBox .box .contactForm .form .textBox:focus {
+  border: 2px solid #c33f47;
+}
+
+.details .container .containerBox .box .contactForm .form .message {
+  resize: none;
+  height: 130px;
+}
+
+.details .container .containerBox .box .contactForm .form .buttons {
+  text-align: center;
+}
+
+.footer {
+  padding: 0 10px;
+}
+
+.footer .container {
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid #ced4da;
+}
+
+.footer .container h6 {
+  font-family: --Poppins-Regular;
+  color: #444444;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: .2rem;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer .container h6 span {
+  color: #c33f47;
+}
+
+.goTop {
+  position: fixed;
+  padding: 1.3rem 1.3rem;
+  right: 1rem;
+  bottom: 3rem;
+  outline: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  background: url(../img/chevron_30px.png);
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #c33f47;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  opacity: 0;
+}
+
+.goTop:hover {
+  border-color: #c33f47;
+}
+
+.goTop.active {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .menuImg {
+    display: initial;
+  }
+  .menuImg.active {
+    display: none;
+  }
+  .header .headerContent .navbar {
+    position: absolute;
+    top: -1000%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.952);
+    padding: 2rem 0;
+    height: 100vh;
+    -webkit-transition: .2s ease-in;
+    transition: .2s ease-in;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    gap: 2rem;
+  }
+  .header .headerContent .navbar .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .headerContent .navbar .closeImg {
+    display: initial;
+    position: absolute;
+    top: 1rem;
+    right: .6rem;
+    cursor: pointer;
+  }
+  .header .headerContent .navbar.active {
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .about .container .containerBox {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  .counter .container .containerBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 3rem;
+  }
+  .appointment .container .containerBox .form .inputBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .lawyers .container .containerBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .details .container .containerBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .details .container .containerBox .box .contactForm .form .inputBox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 0rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .home .container .containerBox h2 {
+    font-size: 1.5rem;
+  }
+  .counter .container .containerBox .box h2 {
+    font-size: 1.5rem;
+  }
+  .title h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .home .container .containerBox h2 {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
